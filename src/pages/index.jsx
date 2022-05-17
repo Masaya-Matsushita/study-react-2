@@ -15,7 +15,7 @@ export default function Home(props) {
     handleChange,
     handleAdd,
   } = props
-  
+
   return (
     <div className={styles.container}>
       <Head>
