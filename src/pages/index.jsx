@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css"
 import { Footer } from "../components/Footer"
 import { Main } from "../components/Main"
 import { Header } from "../components/Header"
-import { useCallback } from "react"
+import { useCallback, useEffect } from "react"
 
 export default function Home() {
   const foo = 1
@@ -12,6 +12,15 @@ export default function Home() {
     console.log(e.target.href)
     e.preventDefault()
     alert(foo)
+  }, [])
+
+  useEffect(() => {
+    console.log("mount")
+    document.body.style.backgroundColor = "lightblue"
+    return () => {
+      console.log("unmount")
+      document.body.style.backgroundColor = ""
+    }
   }, [])
 
   return (
